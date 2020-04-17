@@ -42,7 +42,9 @@ main().then(() => {
                 });
                 if (match) {
                     // console.log(match.desc + ":hidden + : " + child.masterComponent.id)
-                    child.masterComponent = { id: match.identify };
+                    if (child.width <= 24 && child.height <= 24) {
+                        child.masterComponent = { id: match.identify };
+                    }
                 }
             }
             if ("children" in child)
