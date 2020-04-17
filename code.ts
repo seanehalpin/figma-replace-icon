@@ -30,7 +30,7 @@ main().then(() => {
     children.forEach(child => {
       if (child.type === 'INSTANCE') {
 
-        let newName = '2020 Icon/ ' + child.name
+        let newName = '2020 Icon/ ' + child.masterComponent.name
         arrayReplaceIcon.push(newName)
        
         const match = arrayNewIcons.find(item => {
@@ -42,7 +42,7 @@ main().then(() => {
         })
 
         if (match) {
-          // console.log(match.desc + ":hidden + : " + child.masterComponent.id)
+          console.log(match.desc + " : " + child.masterComponent.name)
           
           if (child.width <=24 && child.height <=24) {
             child.masterComponent = {id: match.identify }
